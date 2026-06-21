@@ -1,2 +1,7 @@
-# task-precise
-axentx product · A tool that accurately implements tasks without errors, focusing on precision and reliability for developers and users of tools and software.
+# Task Precise CLI
+
+Task Precise is a simple CLI for registering, obtaining an API key, and submitting tasks.
+
+## Installation
+
+To install Task Precise, run the following command:
