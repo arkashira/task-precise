@@ -3,9 +3,9 @@ requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 
 [tool.poetry]
-name = "dashboard"
-version = "0.1.0"
-description = ""
+name = "specification-parser"
+version = "1.0.0"
+description = "A tool for parsing and validating task specifications"
 
 [tool.poetry.dependencies]
 python = "^3.8"
