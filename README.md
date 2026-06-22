@@ -1,7 +1,9 @@
-# Task Precise CLI
+# Dashboard
+A simple dashboard for monitoring task execution metrics.
 
-Task Precise is a simple CLI for registering, obtaining an API key, and submitting tasks.
-
-## Installation
-
-To install Task Precise, run the following command:
+## Usage
+1. Create a `Dashboard` object.
+2. Add task executions using `add_execution`.
+3. Get metrics using `get_metrics`.
+4. Trigger alerts using `trigger_alert`.
+5. Export metrics using `export_metrics`.
