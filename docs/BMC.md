@@ -1,0 +1,20 @@
+# Business Model Canvas – Task Precise CLI
+
+| **Section** | **Details** |
+|-------------|-------------|
+| **Value Proposition** | • **Developer‑first, zero‑friction task submission** – a lightweight CLI that handles registration, API key provisioning, and task queuing in a single command.<br>• **Consistent, reproducible workflows** – tasks are defined in a declarative format, enabling version control and audit trails.<br>• **Seamless integration with Axentx’s AI‑pipeline** – the CLI talks to the same API that powers our autonomous AI‑workforce, allowing teams to plug their own workloads into the validated, revenue‑driven workflow.<br>• **Security & compliance** – API keys are scoped, rotated, and stored locally in an encrypted config, meeting enterprise security standards. |
+| **Customer Segments** | 1. **AI/ML Engineers & Data Scientists** – need a quick way to submit training, inference, or data‑preparation jobs.<br>2. **DevOps / SRE Teams** – automate task orchestration in CI/CD pipelines.<br>3. **Enterprise AI Ops** – internal teams that run large‑scale, repeatable AI workloads.<br>4. **Open‑source contributors** – developers building on top of Axentx’s platform or integrating with other open‑source tools (e.g., vLLM, SGLang). |
+| **Channels** | • **GitHub Releases** – source and binaries.<br>• **Package Registries** – pip, npm, Homebrew.<br>• **Documentation Site** – hosted on GitHub Pages with examples and tutorials.<br>• **Community Forums & Slack** – support and feedback loop.<br>• **Axentx Marketing & Events** – webinars, hackathons, and partner integrations. |
+| **Customer Relationships** | • **Self‑service** – instant CLI download, auto‑registration, and key provisioning.<br>• **Community‑driven support** – issue tracker, Discord/Slack channels.<br>• **Enterprise SLAs** – dedicated support, onboarding, and custom integrations. |
+| **Revenue Streams** | 1. **Subscription Plans** – tiered (Free, Pro, Enterprise) with limits on task volume, priority queues, and support levels.<br>2. **Pay‑per‑Task** – usage‑based billing for teams that prefer a consumption model.<br>3. **Enterprise Licensing** – on‑prem or private‑cloud deployment with perpetual licensing.<br>4. **Professional Services** – custom integration, training, and consulting. |
+| **Key Resources** | • **Core CLI codebase** (Python/Go) – open‑source, modular.<br>• **API Backend** – handles registration, key issuance, and task queueing.<br>• **Infrastructure** – cloud hosting (AWS/GCP/Azure) for the API and task execution nodes.<br>• **Documentation & SDKs** – for developers to embed the CLI in pipelines.<br>• **Community & Ecosystem** – contributors, maintainers, and partner integrations. |
+| **Key Activities** | • **Product Development** – continuous improvement of CLI, API, and task schema.<br>• **Security & Compliance** – key management, audit logs, and data protection.<br>• **Operations & Monitoring** – uptime, scaling, and cost optimization.<br>• **Marketing & Outreach** – tutorials, webinars, and partnership outreach.<br>• **Customer Success** – onboarding, support, and feedback loops. |
+| **Key Partners** | • **Cloud Providers** – AWS, GCP, Azure for hosting and scaling.<br>• **AI Model Providers** – vLLM, SGLang, and other inference engines for task execution.<br>• **Open‑source Communities** – maintainers of related projects to ensure compatibility.<br>• **Enterprise Partners** – companies that embed Task Precise in their internal AI pipelines.<br>• **Axentx Internal Teams** – product, QA, and data teams that validate task workflows. |
+| **Cost Structure** | • **Development & QA** – salaries, tooling, CI/CD.<br>• **Infrastructure** – compute, storage, networking, and monitoring.<br>• **Security & Compliance** – key management services, audits.<br>• **Marketing & Community** – content creation, events, sponsorships.<br>• **Support & SLAs** – dedicated support staff and incident response. |
+
+---
+
+**Next Steps**
+
+1. **Finalize pricing tiers** based on projected usage and cost per task.<br>
+2. **Build a demo pipeline** that showcases end‑to‑end task submission
