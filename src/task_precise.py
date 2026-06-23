@@ -1,56 +1,49 @@
-import argparse
+import hashlib
 import json
 from dataclasses import dataclass
-from typing import Dict
+from typing import Dict, Any
 
 @dataclass
-class Task:
-    name: str
+class TaskDescription:
+    task_id: str
     description: str
+    inputs_schema: Dict[str, Any]
 
-class TaskPrecise:
-    def __init__(self):
-        self.tenants = {}
-        self.api_keys = {}
+def generate_code(task_description: TaskDescription) -> str:
+    code_template = f"""
+def execute_{task_description.task_id}({', '.join(task_description.inputs_schema.keys())}):
+    # Task logic based on the description
+    result = "{task_description.description}"
+    return result
+"""
+    return code_template
 
-    def register(self, email: str) -> str:
-        if email not in self.tenants:
-            self.tenants[email] = TaskPrecise()
-            self.api_keys[email] = "api-key-" + email
-        return self.api_keys[email]
-
-    def run(self, file_path: str) -> Dict:
-        try:
-            with open(file_path, 'r') as file:
-                task_data = json.load(file)
-                task = Task(task_data['name'], task_data['description'])
-                # Simulate task execution
-                return {"task": task.name, "status": "success"}
-        except FileNotFoundError:
-            return {"error": "File not found"}
-        except json.JSONDecodeError:
-            return {"error": "Invalid JSON"}
+def compile_task(task_json: Dict[str, Any]) -> Dict[str, Any]:
+    task_description = TaskDescription(**task_json)
+    generated_code = generate_code(task_description)
+    # Remove leading and trailing whitespace before calculating the hash
+    stripped_code = generated_code.strip()
+    sha256_hash = hashlib.sha256(stripped_code.encode()).hexdigest()
+    execution_logs = "Code generated successfully"
+    return {
+        "artifact": stripped_code,
+        "sha256": sha256_hash,
+        "logs": execution_logs
+    }
 
 def main():
-    parser = argparse.ArgumentParser(description='Task Precise CLI')
-    subparsers = parser.add_subparsers(dest='command')
-
-    register_parser = subparsers.add_parser('register')
-    register_parser.add_argument('--email', required=True)
-
-    run_parser = subparsers.add_parser('run')
-    run_parser.add_argument('--file', required=True)
-
+    import argparse
+    import sys
+    parser = argparse.ArgumentParser(description="Compile a task description into executable code.")
+    parser.add_argument("json_payload", type=str, help="JSON payload containing task description")
     args = parser.parse_args()
-
-    task_precise = TaskPrecise()
-
-    if args.command == 'register':
-        api_key = task_precise.register(args.email)
-        print(api_key)
-    elif args.command == 'run':
-        result = task_precise.run(args.file)
+    try:
+        task_json = json.loads(args.json_payload)
+        result = compile_task(task_json)
         print(json.dumps(result))
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
