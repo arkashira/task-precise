@@ -1,5 +1,7 @@
-# Specification Parser
-A tool for parsing and validating task specifications.
+# Task Manager
 
-## Installation
-To install the specification parser, run the following command:
+A simple task manager with a web UI.
+
+## Running the Server
+
+To run the server, execute the following command:
