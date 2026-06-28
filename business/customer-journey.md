@@ -1,0 +1,21 @@
+## Customer Journey – **task‑precise**
+
+| Phase | Trigger Event | Friction Points | User Emotions | Opportunities to Delight | Success Metric |
+|-------|---------------|----------------|---------------|--------------------------|----------------|
+| **Aware** | • A developer reads a blog post / sees a tweet about “task‑execution failures costing $X M per year”.  <br>• An engineering manager receives a post‑mortem highlighting a missed deadline due to a single‑task bug. | • Over‑abundance of generic “task‑automation” tools that promise speed but not correctness. <br>• Lack of concrete data on how often precision failures happen. | Curious → Slightly skeptical ( “another hype tool?” ) | • Publish a **precision‑impact report** (e.g., “Every 1,000 tasks, 3% contain silent errors → $200k lost per dev team”). <br>• Release a **one‑page cheat sheet** showing “5 ways precision failures leak money”. | % of target audience that clicks through from the report to the landing page (goal ≥ 12%). |
+| **Consider** | • Visitor lands on the task‑precise homepage after searching “how to guarantee task correctness”. <br>• A team lead receives a recommendation from a peer in a Slack channel. | • Unclear ROI: “How much does precision really save me?” <br>• Fear of integration effort with existing CI/CD pipelines. | Analytical → Cautiously optimistic | • Interactive **ROI calculator** (input task volume, error cost, see saved dollars). <br>• **Zero‑config demo** that runs a sample task suite and shows a live “error‑free” badge. <br>• Publish **case‑study videos** (2‑min) from early adopters. | Demo sign‑ups / calculator completions per visitor (goal ≥ 25%). |
+| **Try** | • User signs up for a 14‑day free trial or spins up a Docker image from the docs. | • Trial onboarding complexity (multiple auth steps, unclear config). <br>• Need to migrate a small real‑world task set to test precision. | Engaged but wary ( “Will it actually catch the edge cases?” ) | • **Guided onboarding wizard** that imports the user’s first task automatically and runs a “precision audit”. <br>• Real‑time **precision scorecard** (e.g., 99.97% correctness) with visual diff of expected vs actual outputs. <br>• Dedicated **trial‑only Slack channel** for rapid support. | Conversion from trial start to “first precision‑audit passed” (goal ≥ 70%). |
+| **Adopt** | • Trial ends; user decides to purchase a subscription or self‑host license. | • Pricing confusion (per‑seat vs per‑task). <br>• Need for governance/role‑based access in enterprise settings. | Confident → Empowered ( “We finally have a safety net.” ) | • Offer **tiered pricing** with a “precision‑guarantee SLA” (e.g., <0.01% false‑negative rate). <br>• Provide **one‑click enterprise rollout** (helm chart, Terraform module). <br>• Early‑access to **precision‑insights API** for custom dashboards. | % of trial users that become paying customers within 30 days (goal ≥ 45%). |
+| **Expand** | • Team scales, adds more developers, or integrates task‑precise into additional pipelines (CI, CD, IaC). | • Limited visibility across multiple teams/projects. <br>• Need for advanced analytics (trend of precision over time). | Proud → Advocating ( “Our releases are now error‑free.” ) | • **Org‑wide dashboard** showing precision trends, hot‑spot modules, and cost‑savings. <br>• **Referral/partner program**: credits for each new team onboarded. <br>• Release **premium add‑ons** (e.g., AI‑assisted task synthesis, compliance audit packs). | Net Revenue Expansion Rate (NRE) – revenue from existing customers / prior period (goal ≥ 130%). |
+
+### Narrative Flow (Quick Reference)
+
+1. **Aware** – Developer sees data‑driven proof of costly task errors → clicks into a high‑impact report.  
+2. **Consider** – Lands on site, runs ROI calculator, watches a 2‑min case‑study → signs up for free trial.  
+3. **Try** – Guided wizard imports a real task, runs a precision audit, shows 99.97% correctness → confidence builds.  
+4. **Adopt** – Receives clear pricing & SLA, deploys enterprise helm chart, purchases subscription.  
+5. **Expand** – Uses org dashboard to monitor precision across squads, refers other teams, upgrades to premium add‑ons.  
+
+---  
+
+*All metrics are tracked via the shared BRAIN analytics layer (pgvector) and feed back into the product‑validation loop.*
